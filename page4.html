@@ -1,0 +1,365 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Special Letter For Neelam</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+height:100vh;
+overflow:hidden;
+font-family:'Poppins',sans-serif;
+background:linear-gradient(135deg,#ffd6e8,#fff0f7,#ffffff);
+display:flex;
+justify-content:center;
+align-items:center;
+position:relative;
+}
+
+/* Floating Items */
+
+.float{
+position:absolute;
+pointer-events:none;
+animation:floatUp linear forwards;
+}
+
+@keyframes floatUp{
+0%{
+transform:translateY(0);
+opacity:1;
+}
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+
+/* First Screen */
+
+#intro{
+text-align:center;
+padding:20px;
+animation:fadeIn 2s;
+}
+
+#intro h1{
+font-size:50px;
+color:#ff4f96;
+text-shadow:0 0 20px pink;
+}
+
+#intro p{
+font-size:22px;
+margin-top:20px;
+color:#555;
+}
+
+.openBtn{
+margin-top:40px;
+padding:15px 35px;
+font-size:20px;
+border:none;
+border-radius:40px;
+background:#ff69b4;
+color:white;
+cursor:pointer;
+box-shadow:0 0 20px pink;
+transition:.3s;
+}
+
+.openBtn:hover{
+transform:scale(1.05);
+}
+
+/* Letter Section */
+
+#letterPage{
+display:none;
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.35);
+justify-content:center;
+align-items:center;
+animation:fadeIn 1s;
+}
+
+.parchment{
+width:80%;
+max-width:850px;
+max-height:85vh;
+overflow-y:auto;
+padding:50px;
+border:12px solid #8b5a2b;
+border-radius:20px;
+background:linear-gradient(#f8ecc2,#e8d4a2);
+box-shadow:
+0 0 40px rgba(0,0,0,.5),
+0 0 30px gold;
+transform:scale(0);
+animation:openScroll 1.2s forwards;
+}
+
+@keyframes openScroll{
+to{
+transform:scale(1);
+}
+}
+
+.parchment h2{
+font-family:'Great Vibes',cursive;
+font-size:55px;
+text-align:center;
+color:#7a3d00;
+margin-bottom:25px;
+}
+
+.parchment p{
+font-size:20px;
+line-height:1.9;
+color:#4a2f13;
+}
+
+.signature{
+margin-top:35px;
+text-align:right;
+font-family:'Great Vibes',cursive;
+font-size:40px;
+color:#7a3d00;
+}
+
+.memoryBtn{
+margin-top:30px;
+display:block;
+margin-left:auto;
+margin-right:auto;
+padding:15px 35px;
+font-size:20px;
+border:none;
+border-radius:40px;
+background:#ff4f96;
+color:white;
+cursor:pointer;
+box-shadow:0 0 20px pink;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+}
+to{
+opacity:1;
+}
+}
+
+.candle{
+position:absolute;
+font-size:40px;
+animation:flicker 1s infinite alternate;
+}
+
+.left{
+left:10%;
+bottom:10%;
+}
+
+.right{
+right:10%;
+bottom:10%;
+}
+
+@keyframes flicker{
+from{
+transform:scale(1);
+}
+to{
+transform:scale(1.08);
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- FIRST SCREEN -->
+
+<div id="intro">
+
+<h1>💌 Before Going To The Memory Wall...</h1>
+
+<p>
+There is something important I want you to read first.
+</p>
+
+<button class="openBtn" onclick="openLetter()">
+📜 Open The Letter
+</button>
+
+</div>
+
+<!-- LETTER SCREEN -->
+
+<div id="letterPage">
+
+<div class="candle left">🕯️</div>
+<div class="candle right">🕯️</div>
+
+<div class="parchment">
+
+<h2>My Dearest Neelam ❤️</h2>
+
+<p>
+
+Before you look back at all our memories,
+I want you to know something.
+
+<br><br>
+
+You are one of the most beautiful chapters of my life.
+Not because of how you look,
+but because of how you make people feel around you.
+
+<br><br>
+
+Your smile brings comfort.
+Your presence brings peace.
+Your kindness leaves an impression that words can never fully describe.
+
+<br><br>
+
+Today is your special day,
+and while gifts may fade and time may pass,
+some feelings remain unchanged.
+
+<br><br>
+
+Thank you for being yourself.
+
+<br>
+
+Thank you for existing.
+
+<br>
+
+Thank you for creating memories worth remembering.
+
+<br><br>
+
+No matter how many photos appear in the next section,
+none of them can truly capture how special you are.
+
+<br><br>
+
+So before entering the Memory Wall...
+
+<br><br>
+
+Remember this:
+
+<br><br>
+
+❤️ You are appreciated.
+
+<br>
+
+❤️ You are valued.
+
+<br>
+
+❤️ You are deeply loved.
+
+<br><br>
+
+Happy Birthday Neelam.
+
+</p>
+
+<div class="signature">
+— Subhradip
+</div>
+
+<button class="memoryBtn"
+onclick="location.href='page5.html'">
+📸 Enter The Memory Wall
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+function openLetter(){
+document.getElementById("intro").style.display="none";
+document.getElementById("letterPage").style.display="flex";
+}
+
+/* Hearts */
+
+function heart(){
+
+let h=document.createElement("div");
+
+h.className="float";
+
+h.innerHTML="💖";
+
+h.style.left=Math.random()*100+"vw";
+h.style.bottom="-50px";
+
+h.style.fontSize=(20+Math.random()*20)+"px";
+
+h.style.animationDuration=
+(5+Math.random()*5)+"s";
+
+document.body.appendChild(h);
+
+setTimeout(()=>{
+h.remove();
+},10000);
+
+}
+
+setInterval(heart,300);
+
+/* Sparkles */
+
+function sparkle(){
+
+let s=document.createElement("div");
+
+s.innerHTML="✨";
+
+s.style.position="absolute";
+
+s.style.left=Math.random()*100+"vw";
+s.style.top=Math.random()*100+"vh";
+
+document.body.appendChild(s);
+
+setTimeout(()=>{
+s.remove();
+},2000);
+
+}
+
+setInterval(sparkle,250);
+
+</script>
+
+</body>
+</html>
+```
