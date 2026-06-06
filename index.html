@@ -356,8 +356,29 @@ e.remove();
 },2000);
 
 }
+function createButterfly(){
 
-setInterval(createSparkle,200);
+const e=document.createElement("div");
+e.className="float";
+
+e.innerHTML="🦋";
+
+e.style.position="absolute";
+
+e.style.left=Math.random()*100+"vw";
+e.style.top=Math.random()*100+"vh";
+
+e.style.fontSize="20px";
+
+document.body.appendChild(e);
+
+setTimeout(()=>{
+e.remove();
+},2000);
+
+}
+
+setInterval(createButterfly,200);
 
 </script>
 
